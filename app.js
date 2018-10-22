@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    API_HOST:'https://api.hitest.xyz'
   }
 })

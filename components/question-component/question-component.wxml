@@ -1,0 +1,3 @@
+<!--components/question-component/question-component.wxml-->
+<text>components/question-component/question-component.wxml</text>
+{{question.question}}

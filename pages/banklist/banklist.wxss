@@ -1,1 +1,4 @@
 /* pages/banklist/banklist.wxss */
+#bank-list{
+  flex-direction: column;
+}

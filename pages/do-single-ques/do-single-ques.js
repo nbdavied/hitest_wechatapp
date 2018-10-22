@@ -1,18 +1,20 @@
-// pages/banklist/banklist.js
+// pages/do-single-ques/do-single-ques.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    banks:[]
+    question:new Object()
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      bankid:options.bankid
+    })
   },
 
   /**
@@ -20,9 +22,9 @@ Page({
    */
   onReady: function () {
     let that = this;
-    this.bankService.getBankList().then((banks)=>{
+    this.questionService.nextQuestion(this.data.bankid).then(data=>{
       that.setData({
-        banks:banks
+        question: data
       })
     })
   },
@@ -69,5 +71,6 @@ Page({
 
   },
 
-  bankService:require('../../services/bankService.js')
+  questionService: require('../../services/questionService.js')
+  
 })

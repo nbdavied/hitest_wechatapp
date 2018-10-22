@@ -1,0 +1,3 @@
+<!--pages/do-single-ques/do-single-ques.wxml-->
+<text>pages/do-single-ques/do-single-ques.wxml</text>
+<question question="{{question}}"></question>

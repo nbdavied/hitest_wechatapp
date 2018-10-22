@@ -1,2 +1,5 @@
-<!--pages/banklist/banklist.wxml-->
-<text>pages/banklist/banklist.wxml</text>
+<block wx:if="{{banks}}">
+  <view wx:for="{{banks}}" wx:for-item="bank" id='bank-list'>
+    <view><navigator open-type='navigateTo' url='../do-single-ques/do-single-ques?bankid={{bank.id}}'>{{bank.name}}</navigator></view>
+  </view>
+</block>

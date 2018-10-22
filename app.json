@@ -1,13 +1,29 @@
 {
   "pages": [
+    
+    "pages/banklist/banklist",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/banklist/banklist"
+    "pages/do-single-ques/do-single-ques",
+    "pages/do-paper/do-paper"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+    
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/banklist/banklist",
+        "text": "随便做做"
+      },
+      {
+        "pagePath": "pages/do-paper/do-paper",
+        "text": "做试卷"
+      }
+    ]
   }
 }

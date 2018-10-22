@@ -1,11 +1,11 @@
-// pages/banklist/banklist.js
+// pages/do-paper/do-paper.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    banks:[]
+
   },
 
   /**
@@ -19,12 +19,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    let that = this;
-    this.bankService.getBankList().then((banks)=>{
-      that.setData({
-        banks:banks
-      })
-    })
+
   },
 
   /**
@@ -67,7 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  bankService:require('../../services/bankService.js')
+  }
 })

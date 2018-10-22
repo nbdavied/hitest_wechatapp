@@ -1,0 +1,4 @@
+class choice{
+  id;
+  text;
+}
