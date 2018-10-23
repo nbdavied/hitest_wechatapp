@@ -1,1 +1,4 @@
 /* components/question-component/question-component.wxss */
+.selected{
+  background-color:lightblue;
+}

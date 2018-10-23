@@ -6,6 +6,18 @@ Component({
   properties: {
     question:{
       type:Object
+    },
+    selected:{
+      type:Array,
+      value:[]
+    },
+    answers:{
+      type:Array,
+      value:[]
+    },
+    selectable:{
+      type: Boolean,
+      value:true
     }
   },
 
@@ -20,6 +32,36 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    select: function (event) {
+      var choiceid = event.target.dataset.choiceid;
+      if (this.data.selectable) {
+        if (this.data.question.type === 'm') {
+          if (!this.data.selected) {
+            this.setData({
+              selected: [choiceid]
+            });
+          } else if (this.data.selected.includes(choiceid)) {
+            var selected = this.data.selected;
+            selected.splice(selected.indexOf(choiceid), 1);
+            this.setData({
+              selected:selected
+            });
+          } else {
+            var selected = this.data.selected;
+            selected.push(choiceid);
+            this.setData({
+              selected:selected
+            });
+          }
+        } else {
+          this.setData({
+            selected: [choiceid]
+          });
+        }
+        this.triggerEvent('selectChange', this.data.selected, {});
+      }
+      
+    }
+  },
 
-  }
 })

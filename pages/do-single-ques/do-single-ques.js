@@ -71,6 +71,10 @@ Page({
 
   },
 
-  questionService: require('../../services/questionService.js')
+  questionService: require('../../services/questionService.js'),
+
+  onSelectChange: function(e){
+    console.log(e.detail);
+  }
   
 })
