@@ -9,7 +9,12 @@ Component({
     },
     selected:{
       type:Array,
-      value:[]
+      value:[],
+      observer:function(){
+        this.setData({
+          selectClass: this.refreshSelectClass()
+        })
+      }
     },
     answers:{
       type:Array,
@@ -25,7 +30,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    selectClass:[]
   },
 
   /**
@@ -58,10 +63,26 @@ Component({
             selected: [choiceid]
           });
         }
+        this.setData({
+          selectClass:this.refreshSelectClass()
+        })
         this.triggerEvent('selectChange', this.data.selected, {});
       }
-      
+    },
+    refreshSelectClass: function(){
+      var selectClass = {};
+      for (var i = 0; i < this.data.question.choices.length; i++) {
+        var choiceid = this.data.question.choices[i].id;
+        if (this.data.selected.includes(choiceid)) {
+          selectClass[choiceid] = 'selected';
+        } else {
+          selectClass[choiceid] = '';
+        }
+      }
+      return selectClass;
     }
   },
-
+  ready:function(){
+    
+  }
 })

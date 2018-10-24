@@ -1,6 +1,5 @@
-<!--components/question-component/question-component.wxml-->
-<text>components/question-component/question-component.wxml</text>
 {{question.question}}
 <view wx:for="{{question.choices}}" wx:for-item="choice">
-  <text bindtap='select' data-choiceId="{{choice.id}}">{{choice.text}}</text>
+  <text bindtap='select' data-choiceId="{{choice.id}}" 
+    class="{{selectClass[choice.id]}}">{{choice.text}}</text>
 </view>

@@ -19,7 +19,29 @@ function nextQuestion(bankid, last = 0, type = null, onlyWrong = false ){
     })
   });
 }
-
+function randomQuestion(bankid, onlyWrong = false, type=null){
+  var wrong = '0';
+  if (onlyWrong) {
+    wrong = '1';
+  }
+  let url = `/question/random?bankId=${bankid}&wrong=${wrong}`;
+  if (type) {
+    url = url + `&type=${type}`;
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: API_HOST + url,
+      method: 'GET',
+      complete: (res) => {
+        if (res.statusCode == 200) {
+          resolve(res.data);
+        } else {
+          reject(res);
+        }
+      }
+    })
+  });
+}
 module.exports = {
   nextQuestion
 }

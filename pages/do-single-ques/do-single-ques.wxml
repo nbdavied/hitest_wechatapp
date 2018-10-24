@@ -1,3 +1,12 @@
-<!--pages/do-single-ques/do-single-ques.wxml-->
-<text>pages/do-single-ques/do-single-ques.wxml</text>
+
 <question question="{{question}}" bind:selectChange="onSelectChange"></question>
+
+<button bindTap="nextQuestion">下一题</button>
+<radio-group bindchange="nextQuestion">
+  <label class='radio'>
+    <radio value="queue" checked="true"/>顺序
+  </label>
+  <label class="radio">
+    <radio value="random"/>随机
+  </label>
+</radio-group>

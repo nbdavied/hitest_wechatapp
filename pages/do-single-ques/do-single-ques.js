@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    question:new Object()
+    question:new Object(),
+    nextType:'queue'
   },
 
   /**
@@ -75,6 +76,10 @@ Page({
 
   onSelectChange: function(e){
     console.log(e.detail);
+  },
+  nextQuestion: function(e){
+    this.setData({
+      nextType:e.detail.value
+    })
   }
-  
 })
